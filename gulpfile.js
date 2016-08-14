@@ -11,6 +11,7 @@ var webpackConfig = require('./webpack.config.js').getConfig(environment);
 var port = $.util.env.port || 1337;
 var app = 'app/';
 var dist = 'dist/';
+var react_component ='../react-components';
 
 // https://github.com/ai/autoprefixer
 var autoprefixerBrowsers = [                 
@@ -77,12 +78,20 @@ gulp.task('images', function(cb) {
     .pipe(gulp.dest(dist + 'images/'));
 });
 
+// copy external react component
+gulp.task('task_react_components', function() {
+    gulp.src(react_component+'/**/*')
+        .pipe(gulp.dest('common/react-components'));
+});
+
 // watch styl, html and js file changes
 gulp.task('watch', function() {
   gulp.watch(app + 'stylus/*.styl', ['styles']);
   gulp.watch(app + 'index.html', ['html']);
   gulp.watch(app + 'scripts/**/*.js', ['scripts']);
   gulp.watch(app + 'scripts/**/*.jsx', ['scripts']);
+  gulp.watch(react_component + '**/*', ['task_react_component']);
+
 });
 
 // remove bundels
@@ -92,9 +101,9 @@ gulp.task('clean', function(cb) {
 
 
 // by default build project and then watch files in order to trigger livereload
-gulp.task('default', ['images', 'html','scripts', 'styles', 'serve', 'watch']);
+gulp.task('default', ['images', 'html','scripts', 'styles', 'task_react_components', 'serve', 'watch']);
 
 // waits until clean is finished then builds the project
 gulp.task('build', ['clean'], function(){
-  gulp.start(['images', 'html','scripts','styles']);
+  gulp.start(['images', 'html','scripts','styles', 'task_react_components']);
 });
