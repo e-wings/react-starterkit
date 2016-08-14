@@ -11,7 +11,7 @@ var webpackConfig = require('./webpack.config.js').getConfig(environment);
 var port = $.util.env.port || 1337;
 var app = 'app/';
 var dist = 'dist/';
-var react_component ='../react-components';
+var react_component ='../react-components/';
 
 // https://github.com/ai/autoprefixer
 var autoprefixerBrowsers = [                 
@@ -80,7 +80,7 @@ gulp.task('images', function(cb) {
 
 // copy external react component
 gulp.task('task_react_components', function() {
-    gulp.src(react_component+'/**/*')
+    gulp.src(react_component+'**/*.*')
         .pipe(gulp.dest('common/react-components'));
 });
 
@@ -90,7 +90,7 @@ gulp.task('watch', function() {
   gulp.watch(app + 'index.html', ['html']);
   gulp.watch(app + 'scripts/**/*.js', ['scripts']);
   gulp.watch(app + 'scripts/**/*.jsx', ['scripts']);
-  gulp.watch(react_component + '**/*', ['task_react_components']);
+  gulp.watch(react_component + '**/*.*', ['task_react_components']);
 
 });
 
