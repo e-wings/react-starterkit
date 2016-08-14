@@ -8,7 +8,9 @@ This starterkit does not include some fancy UI stuff but is a lightweight starti
 ## Get the kit
 
 ```
-$ git clone https://github.com/e-wings/react-starterkit.git && cd react-starterkit
+$ git clone https://github.com/e-wings/react-starterkit.git
+
+$ git clone https://github.com/e-wings/react-components.git
 ```
 
 ## Installation
@@ -16,7 +18,7 @@ $ git clone https://github.com/e-wings/react-starterkit.git && cd react-starterk
 Install all dependencies. 
 
 ```
-$ npm install
+$ cd react-starterkit && npm install
 ```
 
 
