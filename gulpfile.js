@@ -90,7 +90,7 @@ gulp.task('watch', function() {
   gulp.watch(app + 'index.html', ['html']);
   gulp.watch(app + 'scripts/**/*.js', ['scripts']);
   gulp.watch(app + 'scripts/**/*.jsx', ['scripts']);
-  gulp.watch(react_component + '**/*', ['task_react_component']);
+  gulp.watch(react_component + '**/*', ['task_react_components']);
 
 });
 
