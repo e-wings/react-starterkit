@@ -10,6 +10,8 @@ This starterkit does not include some fancy UI stuff but is a lightweight starti
 ```
 $ git clone https://github.com/e-wings/react-starterkit.git
 
+$ mkdir common
+
 $ cd react-starterkit/common
 
 $ git submodule add --force https://adamwuyu@bitbucket.org/e-wings/react-components.git
