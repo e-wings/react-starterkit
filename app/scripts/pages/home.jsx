@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemList from '../../../common/react-components/ui/itemList.jsx';
+import ItemList from '../../../common/component/ui/itemList.jsx';
 import ItemStore from '../stores/itemStore';
 import ItemActions from '../actions/itemActions';
 
