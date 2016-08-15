@@ -1,6 +1,3 @@
-[submodule "common/--force"]
-	path = common/--force
-	url = https://adamwuyu@bitbucket.org/e-wings/react-components.git
 [submodule "common/react-components"]
 	path = common/react-components
 	url = https://adamwuyu@bitbucket.org/e-wings/react-components.git
